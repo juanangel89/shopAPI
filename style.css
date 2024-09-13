@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: brown;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    display: flex;
+    padding: 1rem 4rem 1rem 4rem;
+    justify-content: space-between;
+}
+header > h1{
+    font-size: 30px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+header > i{
+    font-size: 40px;
+    color: white;
+}
+.products{
+    background-color: rgb(57, 36, 77);
+    padding: 2rem;
+    gap: 2rem;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product{
+    width: 15rem;
+    background-color: #505050;
+    display: flex;
+    flex-direction: column;
+}
+.img{
+    width: 100%;
+    height: 50%;
+    position: relative;
+    display: inline-block;
+}
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.descrip{
+    
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.description{
+    padding: 1rem;
+    color: white;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+h2{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btnCart{
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 1rem;
+}
+.btnCart> i{
+    font-size: 30px;
+}
