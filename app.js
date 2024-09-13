@@ -36,7 +36,7 @@ const makeProduct = (product) => {
     descriptionCard.textContent = product.description
 
     const priceCard = document.createElement('p')
-    priceCard.textContent = product.price
+    priceCard.textContent = '$'+product.price
 
     const btnCard=document.createElement('button')
     btnCard.textContent='Añadir'
@@ -54,7 +54,7 @@ const makeProduct = (product) => {
     
 
     cardContent.appendChild(nameCard)
-    cardContent.appendChild(descriptionCard)
+    imgCard.appendChild(descriptionCard)
     cardContent.appendChild(priceCard)
     cardContent.appendChild(btnCard)
     btnCard.appendChild(iconBtn)
