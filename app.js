@@ -1,4 +1,6 @@
 url ='https://fakestoreapi.com/products'
+let cart = []
+// import  { talcosa } from './cart.js'
 
 const products = document.getElementById('products')
 
@@ -51,8 +53,6 @@ const makeProduct = (product) => {
     imgCard.appendChild(imgProduct)
     card.appendChild(cardContent)
 
-    
-
     cardContent.appendChild(nameCard)
     imgCard.appendChild(descriptionCard)
     cardContent.appendChild(priceCard)
@@ -60,5 +60,16 @@ const makeProduct = (product) => {
     btnCard.appendChild(iconBtn)
 
     products.appendChild(card)
-}
 
+    // btnCard.addEventListener ('click',(event)=> {
+    //     console.log(talcosa);
+        
+    //     console.log(`${product.id} + ${product.price}`);
+    //     let currentProduct = {
+    //         id: product.id,
+    //         price: product.price
+    //     }
+    //     cart = [...cart,JSON.stringify(currentProduct),JSON.stringify(currentProduct),JSON.stringify(currentProduct)]
+    //     localStorage.setItem('cartSebas', cart)       
+    // })
+}

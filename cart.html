@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>JUAN SHOP</h1>
+        <a href="cart.html"><i class='bx bx-cart' href="cart.html"></i></a>        
+        <button id="btn-get">Traer del local</button>
+    </header>
+    <section id="products" class="products">
+        <div class="cart">
+            <img src="assets/images/Kotaro el gato.jpeg" alt="">
+            <h2>Maleta</h2>
+            <p>precio: 3.00</p>
+            <div>
+                <button id="decrement">-</button>
+                <input type="text" id="numberInput" value="1" readonly>
+                <button id="increment">+</button>
+            </div>
+            <p>total:</p>
+        </div>
+    </section>
+    <scrip type="module" src="app.js"></scrip>
+    <scrip type="module" src="cart.js"></scrip>
+</body>
+</html>

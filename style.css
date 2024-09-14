@@ -1,103 +1,134 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: brown;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+body {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-header{
-    background-color: rgb(0, 0, 0);
-    width: 100%;
-    display: flex;
-    padding: 1rem 4rem 1rem 4rem;
-    justify-content: space-between;
+header {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  display: flex;
+  padding: 1rem 4rem 1rem 4rem;
+  justify-content: space-between;
 }
-header > h1{
-    font-size: 30px;
-    color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+header > h1 {
+  font-size: 30px;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
-header > i{
-    font-size: 40px;
-    color: white;
+header > a {
+  font-size: 40px;
+  color: white;
 }
-.products{
-    background-color: rgb(57, 36, 77);
-    padding: 2rem;
-    gap: 2rem;
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.products {
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  gap: 2rem;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.product{
-    width: 25rem;
-    height: 40rem;
-    background-color: #505050;
-    display: flex;
-    flex-direction: column;
+.product {
+  width: 25rem;
+  height: 40rem;
+  background-color: #505050;
+  display: flex;
+  flex-direction: column;
 }
-.img{
-    width: 100%;
-    height: 70%;
-    position: relative;
+.img {
+  width: 100%;
+  height: 70%;
+  position: relative;
 }
-img{
-    width: 100%;
-    height: 100%;
-    display: block;
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-.descrip{
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    position: absolute;
-    bottom: 0; /* El texto aparecerá en la parte inferior de la imagen */
-    left: 0;
-    width: 100%;
-    height:100%;
-    color: white;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;    
+.descrip {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  position: absolute;
+  bottom: 0; /* El texto aparecerá en la parte inferior de la imagen */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .img:hover .descrip {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
-.description{
-    padding: 1rem;
-    color: white;
-    text-align: start;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.description {
+  padding: 1rem;
+  color: white;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-h2{
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+h2 {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.btnCart{
-    background-color: black;
-    color: white;
-    padding: 0.5rem;
-    border-radius: 0.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    gap: 1rem;
+.btnCart {
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 1rem;
 }
-.btnCart> i{
-    font-size: 30px;
+.btnCart > i {
+  font-size: 30px;
+}
+.cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 1rem;
+  background-color: #505050;
+  gap: 1rem;
+  border-radius: 2rem;
+  margin: 0.5rem;
+}
+.cart > div > input {
+  width: 2rem;
+  height: 50%;
+  border-radius: 0.5rem;
+  border: none;
+  text-align: center;
+}
+.cart > div > button {
+  width: 2rem;
+  height: 50%;
+  border-radius: 0.5rem;
+  border: none;
+}
+.cart > img {
+  width: 20%;
+  height: 100%;
+  border-radius: 2rem;
 }
