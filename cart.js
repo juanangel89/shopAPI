@@ -2,7 +2,9 @@
 const incrementButton = document.getElementById('increment');
 const decrementButton = document.getElementById('decrement');
 const numberInput = document.getElementById('numberInput');
-const carts = document.getElementById('carts')
+const carts = document.getElementById('carts');
+const total =document.getElementById('total');
+let cantidad = 0;
 
 
 const btnClear = document.getElementById('btn-clear').addEventListener('click', ()=>{
@@ -104,7 +106,7 @@ cart.forEach(product => {
 
     carts.appendChild(cardCart)
 
+    total.textContent= `total: $${cantidad = cantidad+product.price}`
 });
-
 }
-cartStore()
+cartStore();
