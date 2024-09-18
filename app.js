@@ -1,6 +1,6 @@
 url ='https://fakestoreapi.com/products'
 let cart = []
-// import  { talcosa } from './cart.js'
+let cant =1
 
 const products = document.getElementById('products')
 
@@ -44,7 +44,7 @@ const makeProduct = (product) => {
     btnCard.textContent='Añadir'
     btnCard.classList.add('btnCart')
     btnCard.id=product.id
-
+    
     const iconBtn=document.createElement('i')
     iconBtn.classList.add('bx')
     iconBtn.classList.add('bxs-cart-add')
@@ -61,15 +61,30 @@ const makeProduct = (product) => {
 
     products.appendChild(card)
 
-    // btnCard.addEventListener ('click',(event)=> {
-    //     console.log(talcosa);
-        
-    //     console.log(`${product.id} + ${product.price}`);
-    //     let currentProduct = {
-    //         id: product.id,
-    //         price: product.price
-    //     }
-    //     cart = [...cart,JSON.stringify(currentProduct),JSON.stringify(currentProduct),JSON.stringify(currentProduct)]
-    //     localStorage.setItem('cartSebas', cart)       
-    // })
+    btnCard.addEventListener ('click',(event)=> {
+        console.log(`${product.id} + ${product.price}`);
+        let currentProduct = {
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            image: product.image,
+            cant: cant
+        }
+
+        console.log(currentProduct);
+        cart = JSON.parse(localStorage.getItem('cart')) || []; // Recupera el carrito actual del localStorage
+        let existingProduct = cart.find(item => item.id === currentProduct.id);
+        if (existingProduct) {
+            // Si el producto ya existe, suma el precio
+            existingProduct.cant += currentProduct.cant;
+            console.log('producto sumado');
+        } else {
+            // Si no existe, lo agregas al carrito
+            cart.push(currentProduct);
+            console.log('producto nuevo agregado');
+        }
+        localStorage.setItem('cart', JSON.stringify(cart)); // Guarda el carrito actualizado en el localStorage
+    })
 }
+
+

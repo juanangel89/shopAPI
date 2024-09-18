@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Juan Shop</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
         <h1>JUAN SHOP</h1>
-        <a href="cart.html"><i class='bx bx-cart' href="cart.html"></i></a>        
-        <button id="btn-get">Traer del local</button>
+        <!-- <button id="btn-get">Traer del local</button> -->
+         <div>
+            <button id="btn-clear">Cancelar compra</button>
+            <a href="index.html"><i class='bx bx-arrow-back'></i></a>
+        </div>
+
+        
     </header>
-    <section id="products" class="products">
-        <div class="cart">
+    <section id="carts" class="carts">
+        <!-- <div class="cart">
             <img src="assets/images/Kotaro el gato.jpeg" alt="">
             <h2>Maleta</h2>
             <p>precio: 3.00</p>
-            <div>
+            <div class="btnsCant">
                 <button id="decrement">-</button>
                 <input type="text" id="numberInput" value="1" readonly>
                 <button id="increment">+</button>
             </div>
             <p>total:</p>
-        </div>
+        </div> -->
     </section>
-    <scrip type="module" src="app.js"></scrip>
-    <scrip type="module" src="cart.js"></scrip>
+    <script src="cart.js"></script>
 </body>
 </html>
