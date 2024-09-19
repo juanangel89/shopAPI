@@ -106,7 +106,7 @@ cart.forEach(product => {
 
     carts.appendChild(cardCart)
 
-    total.textContent= `total: $${cantidad = cantidad+product.price}`
+    total.textContent= `total: $${cantidad = cantidad+(product.price*inputCant.value)}`
 });
 }
 cartStore();

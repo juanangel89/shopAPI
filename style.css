@@ -251,7 +251,7 @@ footer{
 .pagar > p {
   font-size: 20px;
 }
-@media screen and (min-width: 390px) and (max-width: 490px) {
+@media screen and (min-width: 310px) and (max-width: 490px) {
   .carts {
     margin-top: 5rem;
     margin-bottom: 5rem;
