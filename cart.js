@@ -75,9 +75,9 @@ cart.forEach(product => {
         let currentValue = parseInt(inputCant.value); // Obtener el valor actual y convertirlo a número
         if (inputCant.value > 1) {
             decrement.disabled = false;
-            inputCant.value = currentValue + 1; // Incrementar el valor en 1
+            inputCant.value = currentValue + 1;
         } else{
-            inputCant.value = currentValue + 1; // Incrementar el valor en 1
+            inputCant.value = currentValue + 1;
         }
         priceCard.textContent = 'subtotal: $'+product.price*inputCant.value
     });
