@@ -5,12 +5,14 @@ const numberInput = document.getElementById('numberInput');
 const carts = document.getElementById('carts');
 const total =document.getElementById('total');
 let cantidad = 0;
+let totalConvertido =0;
 
 
 const btnClear = document.getElementById('btn-clear').addEventListener('click', ()=>{
     console.log('carrito borrado');
     
     localStorage.clear();
+    location.reload();
     
 })
 
@@ -21,9 +23,20 @@ const btnClear = document.getElementById('btn-clear').addEventListener('click', 
     
 // })
 
+const showTotal = ()=>{
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.forEach(product=>{
+        cantidad = cantidad+(product.price*product.cant)
+            console.log(cantidad);
+            
+        total.textContent= `total: $${cantidad.toFixed(2)}`
+    })
+}
+showTotal();
+
 const cartStore = ()=>{
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-// Aquí puedes iterar sobre los productos del carrito y mostrarlos
+    // itera sobre los productos del carrito y mostrarlos
 cart.forEach(product => {
     console.log(`Product ID: ${product.id}, Price: ${product.price}`);
     
@@ -51,9 +64,12 @@ cart.forEach(product => {
             decrement.disabled = true;
         } else {
             inputCant.value = currentValue - 1; // Decrementar el valor en 1
+            product.cant= inputCant.value;
+            
         }
-        
+        localStorage.setItem('cart', JSON.stringify(cart));        
         priceCard.textContent = 'subtotal: $'+product.price*inputCant.value
+        location.reload();
     });
 
     const inputCant = document.createElement('input')
@@ -62,7 +78,8 @@ cart.forEach(product => {
     inputCant.value=product.cant
 
     const priceCard = document.createElement('p')
-    priceCard.textContent = 'subtotal: $'+product.price*inputCant.value
+    let subtotal = product.price*inputCant.value 
+    priceCard.textContent = 'subtotal: $'+ subtotal.toFixed(2)
     if (inputCant.value == 1) {
         decrement.disabled = true;
     }
@@ -73,13 +90,17 @@ cart.forEach(product => {
     // Evento para incrementar el valor
     increment.addEventListener('click', () => {
         let currentValue = parseInt(inputCant.value); // Obtener el valor actual y convertirlo a número
-        if (inputCant.value > 1) {
+        if (inputCant.value >= 1) {
             decrement.disabled = false;
             inputCant.value = currentValue + 1;
+            product.cant= inputCant.value;
         } else{
             inputCant.value = currentValue + 1;
+            product.cant= inputCant.value;
         }
+        localStorage.setItem('cart', JSON.stringify(cart));
         priceCard.textContent = 'subtotal: $'+product.price*inputCant.value
+        location.reload();
     });
 
     const clearProduct = document.createElement('button')
@@ -106,7 +127,7 @@ cart.forEach(product => {
 
     carts.appendChild(cardCart)
 
-    total.textContent= `total: $${cantidad = cantidad+(product.price*inputCant.value)}`
 });
 }
 cartStore();
+
