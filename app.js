@@ -75,9 +75,10 @@ const makeProduct = (product) => {
         cart = JSON.parse(localStorage.getItem('cart')) || []; // Recupera el carrito actual del localStorage
         let existingProduct = cart.find(item => item.id === currentProduct.id);
         if (existingProduct) {
-            // Si el producto ya existe, suma el precio
+            // Si el producto ya existe, suma la cantidad
             existingProduct.cant += currentProduct.cant;
             console.log('producto sumado');
+            console.log(`${existingProduct.cant}`);
         } else {
             // Si no existe, lo agregas al carrito
             cart.push(currentProduct);

@@ -64,7 +64,7 @@ cart.forEach(product => {
             decrement.disabled = true;
         } else {
             inputCant.value = currentValue - 1; // Decrementar el valor en 1
-            product.cant= inputCant.value;
+            product.cant= parseInt(inputCant.value);
             
         }
         localStorage.setItem('cart', JSON.stringify(cart));        
@@ -93,7 +93,7 @@ cart.forEach(product => {
         if (inputCant.value >= 1) {
             decrement.disabled = false;
             inputCant.value = currentValue + 1;
-            product.cant= inputCant.value;
+            product.cant= parseInt(inputCant.value);
         } else{
             inputCant.value = currentValue + 1;
             product.cant= inputCant.value;
