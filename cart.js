@@ -76,6 +76,12 @@ cart.forEach(product => {
     inputCant.type='text'
     inputCant.id=product.id
     inputCant.value=product.cant
+    inputCant.addEventListener('input', ()=>{
+        product.cant= parseInt(inputCant.value);
+        localStorage.setItem('cart', JSON.stringify(cart)); 
+        console.log(product.cant);
+        showTotal()
+    })
 
     const priceCard = document.createElement('p')
     let subtotal = product.price*inputCant.value 
