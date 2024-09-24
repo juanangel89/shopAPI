@@ -4,7 +4,7 @@ const decrementButton = document.getElementById('decrement');
 const numberInput = document.getElementById('numberInput');
 const carts = document.getElementById('carts');
 const total =document.getElementById('total');
-let cantidad = 0;
+
 let totalConvertido =0;
 
 
@@ -24,6 +24,7 @@ const btnClear = document.getElementById('btn-clear').addEventListener('click', 
 // })
 
 const showTotal = ()=>{
+    let cantidad = 0;
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.forEach(product=>{
         cantidad = cantidad+(product.price*product.cant)
@@ -78,6 +79,7 @@ cart.forEach(product => {
     inputCant.value=product.cant
     inputCant.addEventListener('input', ()=>{
         product.cant= parseInt(inputCant.value);
+        priceCard.textContent = 'subtotal: $'+product.price*inputCant.value
         localStorage.setItem('cart', JSON.stringify(cart)); 
         console.log(product.cant);
         showTotal()
