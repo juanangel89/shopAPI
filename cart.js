@@ -75,8 +75,8 @@ cart.forEach(product => {
 
     const inputCant = document.createElement('input')
     inputCant.type='number'
-    inputCant.min=1
-    inputCant.step=1
+    // inputCant.min=1
+    // inputCant.step=1
     inputCant.id=product.id
     inputCant.value=product.cant
     inputCant.addEventListener('input', ()=>{
