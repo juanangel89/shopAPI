@@ -70,16 +70,23 @@ cart.forEach(product => {
         }
         localStorage.setItem('cart', JSON.stringify(cart));        
         priceCard.textContent = 'subtotal: $'+product.price*inputCant.value
-        location.reload();
+        showTotal()
     });
 
     const inputCant = document.createElement('input')
-    inputCant.type='text'
+    inputCant.type='number'
+    inputCant.min=1
+    inputCant.step=1
     inputCant.id=product.id
     inputCant.value=product.cant
     inputCant.addEventListener('input', ()=>{
+        if (inputCant.value === '0' || inputCant.value === '' ) {
+            inputCant.value = '1';
+        }
+        inputCant.value = inputCant.value.replace(/[^0-9]/g, '');
         product.cant= parseInt(inputCant.value);
-        priceCard.textContent = 'subtotal: $'+product.price*inputCant.value
+        let subtotal = product.price*inputCant.value 
+        priceCard.textContent = 'subtotal: $'+ subtotal.toFixed(2)
         localStorage.setItem('cart', JSON.stringify(cart)); 
         console.log(product.cant);
         showTotal()
@@ -108,7 +115,7 @@ cart.forEach(product => {
         }
         localStorage.setItem('cart', JSON.stringify(cart));
         priceCard.textContent = 'subtotal: $'+product.price*inputCant.value
-        location.reload();
+        showTotal()
     });
 
     const clearProduct = document.createElement('button')
@@ -119,7 +126,7 @@ cart.forEach(product => {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart = cart.filter(item => item.id !== product.id);
         localStorage.setItem('cart', JSON.stringify(cart));
-        location.reload();
+        showTotal()
     });
 
     cardCart.appendChild(imgProduct)
