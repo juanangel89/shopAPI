@@ -74,13 +74,13 @@ cart.forEach(product => {
     });
 
     const inputCant = document.createElement('input')
-    inputCant.type='number'
-    // inputCant.min=1
+    inputCant.type='text'
+    inputCant.min=1
     // inputCant.step=1
     inputCant.id=product.id
     inputCant.value=product.cant
     inputCant.addEventListener('input', ()=>{
-        if (inputCant.value === '0' || inputCant.value === '' ) {
+        if (inputCant.value == 0 || inputCant.value === '' ) {
             inputCant.value = '1';
         }
         inputCant.value = inputCant.value.replace(/[^0-9]/g, '');
